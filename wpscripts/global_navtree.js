@@ -1,6 +1,6 @@
 var global_navtree = WpNavBar.readTree({
 "childArray" : [
-{   sDescription:'Welcome to Mutt\'s Temple.',
+{   sDescription:'Welcome to Mutt\'s Mutt.',
     sTitle:'Home',
     bIsWebPath:true,
     sUrl:'index.html'
@@ -9,7 +9,7 @@ var global_navtree = WpNavBar.readTree({
     bIsWebPath:true,
     sUrl:'events.html'
 },
-{   sDescription:'Photo Gallery of Mutt\'s Temple.',
+{   sDescription:'Photo Gallery of Mutt\'s Mutt.',
     sTitle:'Gallery',
     bIsWebPath:true,
     sUrl:'gallery.html'
@@ -23,7 +23,7 @@ var global_navtree = WpNavBar.readTree({
     bIsWebPath:true,
     sUrl:'hanuman_chalisa.html'
 },
-{   sDescription:'General Information about Mutt Temple.',
+{   sDescription:'General Information about Mutt Mutt.',
     sTitle:'Information',
     bIsWebPath:true,
     sUrl:'information.html'
@@ -50,7 +50,7 @@ var global_navtree = WpNavBar.readTree({
     bIsWebPath:true,
     sUrl:'horoscope.html'
 },
-{   sDescription:'Contact Us at Mutt\'s Temple',
+{   sDescription:'Contact Us at Mutt\'s Mutt',
     sTitle:'Contact Us',
     bIsWebPath:true,
     sUrl:'contact.html'

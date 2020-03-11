@@ -1,6 +1,6 @@
 var global_navtree = WpNavBar.readTree({
 "childArray" : [
-{   sDescription:'Welcome to Mataji\'s Temple.',
+{   sDescription:'Welcome to Mutt\'s Temple.',
     sTitle:'Home',
     bIsWebPath:true,
     sUrl:'index.html'
@@ -9,12 +9,12 @@ var global_navtree = WpNavBar.readTree({
     bIsWebPath:true,
     sUrl:'events.html'
 },
-{   sDescription:'Photo Gallery of Mataji\'s Temple.',
+{   sDescription:'Photo Gallery of Mutt\'s Temple.',
     sTitle:'Gallery',
     bIsWebPath:true,
     sUrl:'gallery.html'
 },
-{   sTitle:'Mataji\'s Aarti',
+{   sTitle:'Mutt\'s Aarti',
     bIsWebPath:true,
     sUrl:'aarti.html'
 },
@@ -23,7 +23,7 @@ var global_navtree = WpNavBar.readTree({
     bIsWebPath:true,
     sUrl:'hanuman_chalisa.html'
 },
-{   sDescription:'General Information about Mataji Temple.',
+{   sDescription:'General Information about Mutt Temple.',
     sTitle:'Information',
     bIsWebPath:true,
     sUrl:'information.html'
@@ -33,10 +33,10 @@ var global_navtree = WpNavBar.readTree({
     bIsWebPath:true,
     sUrl:'service.html'
 },
-{   sDescription:'About Mataji',
-    sTitle:'About Mataji',
+{   sDescription:'About Mutt',
+    sTitle:'About Mutt',
     bIsWebPath:true,
-    sUrl:'aboutmataji.html'
+    sUrl:'aboutMutt.html'
 },
 {   sTitle:'About Us',
     bIsWebPath:true,
@@ -50,7 +50,7 @@ var global_navtree = WpNavBar.readTree({
     bIsWebPath:true,
     sUrl:'horoscope.html'
 },
-{   sDescription:'Contact Us at Mataji\'s Temple',
+{   sDescription:'Contact Us at Mutt\'s Temple',
     sTitle:'Contact Us',
     bIsWebPath:true,
     sUrl:'contact.html'

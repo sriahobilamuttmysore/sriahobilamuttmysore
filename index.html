@@ -43,8 +43,8 @@
     <script src="js/modernizr-2.6.2.min.js"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         img {
@@ -61,6 +61,117 @@
   left: 100%;
   margin-top: -1px;
 }
+  * {
+   box-sizing: border-box;
+  }
+  
+  .thumbs {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-content: flex-start;
+   align-items: stretch;
+   /* for demo: */
+   width: 400px;
+   margin: 10px auto;
+   resize: both;
+  }
+  /* last row overstretch fix */
+  .thumbs:after {
+    content: "";
+    flex: 100 0 auto;
+  }
+  
+  .thumb {
+   position: relative;
+   display: inline-block;
+   flex: 1 0 auto;
+   width: auto;
+   height: 150px;
+   margin: 2px;
+   text-decoration: none;
+   background-color: rgba(0,0,0, 0.50);
+   box-shadow: 0px 0px 0px 0px rgba(0,0,0, 0.0);
+   transition: box-shadow 300ms, transform 400ms, z-index 400ms, background-position 400ms;
+   z-index: 1;
+  }
+  .thumb:hover {
+   box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.7);
+   transform: scale(1.2, 1.2);
+   z-index: 100;
+  }
+  
+  .thumb-img > img,
+  .thumb-txt > div {
+   min-width: 60px;
+   max-width: 300px;
+  }
+  
+  .thumb-img {
+   background-size: cover;
+   background-position: 50% 50%;
+   background-repeat: no-repeat;
+  }
+  .thumb-img:hover {
+   animation-name: thumb-scroll;
+   animation-delay: 400ms;
+   animation-duration: 2.5s;
+   animation-iteration-count: infinite;
+   animation-direction: normal;
+   animation-timing-function: linear;
+   animation-fill-mode: forwards;
+  }
+  .thumb-img > img {
+   display: block;
+   height: 100%;
+   opacity: 0;
+  }
+  @keyframes thumb-scroll {
+   15%, 35% { background-position: 0% 0%; }
+   65%, 85% { background-position: 100% 100%; }
+  }
+  
+  .thumb > div {
+   font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+   font-size: 14px;
+   color: #fff;
+   padding: 0px 2px;
+   overflow: hidden;
+  }
+  .thumb > div > span {
+   display: block;
+  }
+  .thumb > div > span:first-child {
+   font-weight: bold;
+  }
+  .thumb > div > span:last-child {
+   font-size: 0.8em;
+  }
+  
+  .thumb-img > div {
+   display: block;
+   position: absolute;
+   bottom: 0px;
+   left: 0px;
+   width: 100%;
+   white-space: nowrap;
+   background-color: rgba(0,0,0, 0.30);
+   opacity: 0;
+   transition: opacity 300ms;
+  }
+  .thumb-img > div > span {
+   font-size: 0.8em;
+  }
+  .thumb-img:hover > div {
+   opacity: 1;
+  }
+  
+  .thumb-txt > div {
+   display: block;
+   width: auto;
+   height: 100%;
+  }
     </style>
 </head>
 
@@ -170,33 +281,20 @@
   
                     <p class="fh5co-section-sub-lead">
                        <h2> Welcome to Sri Ahobila Mutt Mysore</h2>
-			<h3 style="color:red;" >Notice</h3>
+      <h3 style="color:red;" >Notice</h3>
 As a precautionary measure and in following orders issued by Government of Karnataka, the Management of Sri Ahobila Mutt Mysore has decided to close the temple for devotees till 30th April 2020.
 
 
                     </p>
                     <br>
                     <br>
-                    <h4>Teleupanyasam Archives</h4>
-                                  <a href="https://soundcloud.com/ahobila-mutt-contact/sampradayam-paricayam-part-1-by-drp-ramanujan">
-                                   Dr.P Ramanujan - Sampradayam – Paricayam (Part-1) April 12th 2020 </a>
-                             <br>
-
-                                <a href="https://soundcloud.com/ahobila-mutt-contact/sampradayam-paricayam-day-1-part-2-by-drp-ramanujan">   Dr.P Ramanujan - Sampradayam – Paricayam (Part-2) April 12th 2020 </a>
-                             <br>
-
-                             <a href="https://soundcloud.com/ahobila-mutt-contact/science-and-spirituality-by-drma-lakshmi-thathachar">   Prof.M.A.Lakshmithathachar - Science and Spirituality Recording April 11th 2020 </a>
-                             <br>
-                    <a href="https://soundcloud.com/ahobila-mutt-contact/srivaishnava-andhu-indhu-by-drmalakshmi-thathachar">   Prof.M.A.Lakshmithathachar - Srivaishnavism Recording April 4th 2020 </a>
-                    <br>
-           
-
+                    <h4>Teleupanyasam Archives</h4> <a href="https://meet.google.com/sqy-roev-duw"> Click here for live Teleconference </a>
+                    <div id="thumbs" class="thumbs"></div>
                 </div>
                 <div class="fh5co-spacer fh5co-spacer-md"></div>
             </div>
         </div>
     </div>
-
     <footer id="fh5co-footer">
         <div class="container">
 
@@ -225,10 +323,48 @@ As a precautionary measure and in following orders issued by Government of Karna
     <script src="js/jquery.magnific-popup.min.js"></script>
     <!-- Main JS -->
     <script src="js/main.js"></script>
+    <script>
+    
+    /* JSFiddle for https://medium.com/@mew/responsive-gallery-tiles-with-pure-css-b24e1ae5068 */
+
+  // scripted html generator to ease the demo creation
+  // note that it generates only html, no sizes or anything else
+  
+  var data = [
+     {type: "img", src: "images/ramanjuan.png", href: "https://soundcloud.com/ahobila-mutt-contact/sets/dr-p-ramanujan", title: "Dr. P Ramanujan", text: "Sampradayam – Paricayam"},
+     {type: "img", src: "images/lakshmi.png", href: "https://soundcloud.com/ahobila-mutt-contact/sets/dr-m-a-lakshmi-thathachar", title: "Prof. Lakshmithathachar", text: "Science and Spirituality"}
+
+
+  ];
+  
+  // html templates
+  var tplimg = '<a href="%href%" class="thumb thumb-img" style="background-image: url(%src%)">'
+             + '<img src="%src%" alt="%title%"/>'
+             + '<div><span>%title%</span><span>%text%</span></div>'
+             + '</a>';
+  var tpltxt = '<a href="%href%" class="thumb thumb-txt">'
+             + '<div><span>%title%</span><span>%text%</span></div>'
+             + '</a>';
+  
+  var cnt = document.getElementById("thumbs");
+  var cs = "";
+  for (var i=0; i<data.length; i++) {
+   // choose a template to use
+   var tpl = data[i].type == "img" ? tplimg : tpltxt;
+   // replace strings
+   for (var k in data[i])
+    tpl = tpl.replace(eval("/%"+k+"%/g"), data[i][k]);
+   // save the result
+   cs += tpl;
+  }
+  cnt.innerHTML = cs;
+</script>
+
+
 
 <!--     <iframe src="aadivanshatakopamangalam.mp3" allow="autoplay" id="audio" style="background: #0000000;" style="background-color: #FFFFFF" width="1" height="4" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen >
     </iframe>
-	 -->
+   -->
 <!-- <audio autoplay>
 <source src=narayana.mp3″ type=”audio/mp3″>
 </audio> -->

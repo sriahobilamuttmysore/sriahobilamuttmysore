@@ -47,6 +47,67 @@
   <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #fff
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f0b74f
+;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
         img {
             display: block;
             margin-left: auto;
@@ -243,6 +304,7 @@
                           <li><a href="at.html"><span>Audio/Text<span class="border"></span></span></a></li>
                           <li><a href="gal.html"><span>Photo Gallery<span class="border"></span></span></a></li>
                           <li><a href="mupdate.html"><span>Media Gallery<span class="border"></span></span></a></li>
+                            <li><a href="announce.html"><span>Announcement<span class="border"></span></span></a></li>
                       </ul>
                                                 <li><a href="#"><span>Sancharam of Jeer<span class="border"></span></span></a></li>
                           <li><a href="pan.html"><span>Panchangam<span class="border"></span></span></a></li>
@@ -313,6 +375,9 @@ The temple has reopened from 08 June 2020 based on orders issued by Government o
 
                     </p>
                 <p></p>
+
+<button onclick="window.location.href='awards.html'" class="glow-on-hover" type="button" >Awards</button>
+
                 <h3> Paying respects to HH The Jeer on behalf of Mysore branch </h3>
 <img src="seer.jpg" alt="" style="width:70%;">
 <p></p>

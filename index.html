@@ -48,17 +48,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 
+
+.btn-default {
+  background-color: #000;
+  color: #ffe100;
+  animation: glow 5000ms infinite;
+}
+.btn-primary {
+  background-color:
+    #ffe100;
+  color: #000;
+
+}
+
+.button-glow {
+  animation: glow 5000ms infinite;
+}
+
 .glow-on-hover {
     width: 220px;
     height: 50px;
     border: none;
     outline: none;
-    color: #fff;
+    color: #000000;
     background: #fff;
     cursor: pointer;
     position: relative;
     z-index: 0;
     border-radius: 10px;
+    animation: glow 5000ms infinite;
 }
 
 .glow-on-hover:before {
@@ -76,18 +94,22 @@
     opacity: 0;
     transition: opacity .3s ease-in-out;
     border-radius: 10px;
+    animation: glow 5000ms infinite;
 }
 
 .glow-on-hover:active {
     color: #fff
+    animation: glow 5000ms infinite;
 }
 
 .glow-on-hover:active:after {
     background: transparent;
+    animation: glow 5000ms infinite;
 }
 
 .glow-on-hover:hover:before {
     opacity: 1;
+    animation: glow 5000ms infinite;
 }
 
 .glow-on-hover:after {
@@ -96,12 +118,22 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #f0b74f
+    background: #ffe100
 ;
     left: 0;
     top: 0;
     border-radius: 10px;
+    animation: glow 5000ms infinite;
 }
+
+@keyframes glow {
+  0% { box-shadow: 0 0 -10px #eb8602; }
+  40% { box-shadow: 0 0 20px #eb8602; }
+  60% { box-shadow: 0 0 20px #eb8602; }
+  100% { box-shadow: 0 0 -10px #eb8602; }
+}
+
+
 
 @keyframes glowing {
     0% { background-position: 0 0; }
@@ -150,7 +182,7 @@
    flex: 1 0 auto;
    width: auto;
    height: 150px;
-   margin: 2px;
+   margin: 0.01px;
    text-decoration: none;
    background-color: rgba(0,0,0, 0.50);
    box-shadow: 0px 0px 0px 0px rgba(0,0,0, 0.0);
@@ -166,7 +198,7 @@
   .thumb-img > img,
   .thumb-txt > div {
    min-width: 60px;
-   max-width: 200px;
+   max-width: 100px;
   }
   
   .thumb-img {
@@ -233,15 +265,24 @@
    width: auto;
    height: 100%;
   }
+
   p.ex1 {
-  padding-left: 50px;
+  padding-left: 200px;
 }
+  p.exone {
+  padding-left: -50px;
+
+}
+
+p.ex1, p.exone { display:inline }
+
   p.ex2 {
   padding-right: 50px;
 }
 
   p.ex3 {
   padding-right: 100px;
+  padding-bottom: 10px;
 
 }
 
@@ -370,18 +411,16 @@
   
                     <p class="fh5co-section-sub-lead">
                        <h2> Welcome to Sri Ahobila Mutt Mysore</h2>
+                       <br>
 <!--       <h3 style="color:red;" >Notice</h3>
 The temple has reopened from 08 June 2020 based on orders issued by Government of Karnataka. It would follow all guidelines instructed in the said order -->
 
                     </p>
                 <p></p>
 
-<button onclick="window.location.href='awards.html'" class="glow-on-hover" type="button" >Awards</button>
+<button onclick="window.location.href='awards.html'" class="glow-on-hover" type="button" >Announcement of Awards</button>
 
-                <h3> Paying respects to HH The Jeer on behalf of Mysore branch </h3>
-<img src="seer.jpg" alt="" style="width:70%;">
-<p></p>
-<img src="seer1.jpg" alt="" style="width:70%;">
+
                 
 <!--                     <br>
                     <h4><a href="https://m.facebook.com/story.php?story_fbid=3075758179208098&id=100003218378384"> Viswaroopa Seva @ Selayur </a></h4> -->
@@ -401,24 +440,20 @@ The temple has reopened from 08 June 2020 based on orders issued by Government o
 
 <br>
 
-
-<h4>Important Information</h4>
-
-<h4><a class ="ex1" href="jeer.pdf">Click here for Biography of HH The 46th Jeer </a></h4>
-
-
-
+<br>
+<br>
 <br>
 <br>
        
 <!-- <h4 style="display:inline;">Click here for live Teleupanyasam</h4> <h4 style="display:inline;">Teleupanyasam Archives</h4> -->
-                                 <p class ="ex3" align="right">Teleupanyasam Archives</p> 
+                                 <p class ="exone" align = "left">Click here for Online Stotra Parayanam  </p> 
 
-                                 <p class ="ex1" href="https://meet.google.com/rmu-qtua-ufe" align = "left"> Click here for Online Stotra Parayanam </p>
+                                 <p class ="ex1" href="https://meet.google.com/rmu-qtua-ufe" > Teleupanyasam Archives
+                                 </p>
 
                     <div id="thumbs" class="thumbs"></div>
                 </div>
-                <div class="fh5co-spacer fh5co-spacer-md"></div>
+
             </div>
         </div>
     </div>
